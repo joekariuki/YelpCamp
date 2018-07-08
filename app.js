@@ -79,6 +79,14 @@ app.get("/campgrounds/:id", function(req, res) {
     });
 });
 
+// ======================
+// COMMENTS ROUTES
+// ======================
+
+app.get("/campgrounds/:id/comments/new", function(req, res) {
+    res.send("THIS WILL BE A COMMENT FORM");
+})
+
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("YelpCamp Server On")
 });
