@@ -10,23 +10,6 @@ mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
-
-// Campground.create(
-//      {
-//          name: "Granite Hill", 
-//          image: "https://farm1.staticflickr.com/60/215827008_6489cd30c3.jpg",
-//          description: "This is a huge granite hill, no bathrooms.  No water. Beautiful granite!"
-         
-//      },
-//      function(err, campground){
-//       if(err){
-//           console.log(err);
-//       } else {
-//           console.log("NEWLY CREATED CAMPGROUND: ");
-//           console.log(campground);
-//       }
-//     });
-
 app.get("/", function(req, res) {
     res.render("landing");
 });
@@ -38,7 +21,7 @@ app.get("/campgrounds", function(req, res) {
             if(err) {
                 console.log(err);
             } else {
-                res.render("index", {campgrounds: allCampgrounds});
+                res.render("campgrounds/index", {campgrounds: allCampgrounds});
             }
         });
 });
@@ -63,7 +46,7 @@ app.post("/campgrounds", function(req, res) {
 
 //NEW - show form to create new campground
 app.get("/campgrounds/new", function(req, res) {
-    res.render("new");
+    res.render("campgrounds/new");
 });
 
 // SHOW - shows more info about one campground
@@ -74,7 +57,7 @@ app.get("/campgrounds/:id", function(req, res) {
             console.log(err)
         } else {
             // render show template with that campground
-            res.render("show", {campground: foundCampground});
+            res.render("campgrounds/show", {campground: foundCampground});
         }
     });
 });
@@ -84,7 +67,7 @@ app.get("/campgrounds/:id", function(req, res) {
 // ======================
 
 app.get("/campgrounds/:id/comments/new", function(req, res) {
-    res.send("THIS WILL BE A COMMENT FORM");
+    res.render("comments/new")
 })
 
 app.listen(process.env.PORT, process.env.IP, function() {
