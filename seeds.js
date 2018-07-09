@@ -43,9 +43,6 @@ function seedDB() {
                             if(err) {
                                 console.log(err);
                             } else {
-                                // assigned the campground.comments to new comment to add comment
-                                // instead of pushing it, for some reason pushing the comment produces an undefined error
-                                // prev: campground.comments.push(comment);
                                 campground.comments.push(comment);
                                 campground.save();
                                 console.log("Created new comment");
