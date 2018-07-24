@@ -1,6 +1,11 @@
-var mongoose   = require("mongoose");
-var Campground = require("./models/campground");
-var Comment    = require("./models/comment");
+var mongoose      = require("mongoose");
+var Campground    = require("./models/campground");
+var Comment       = require("./models/comment");
+var express       = require("express");
+var app           = express();
+var bodyParser    = require("body-parser");
+
+app.use(bodyParser.urlencoded({extended: true}));
 
 var data = [
     {

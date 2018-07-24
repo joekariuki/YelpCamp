@@ -4,6 +4,7 @@ var Campground = require("../models/campground.js");
 var Comment    = require("../models/comment.js");
 var passport   = require("passport");
 var User       = require("../models/user");
+
 // ROOT 
 router.get("/", function(req, res) {
     res.render("landing");
