@@ -17,11 +17,17 @@
                    </div>
                    <div class="caption">
                        <h4 class="float-right">$9.00/night</h4>
-                       <h4><a href="#"><%= campground.name %></a></h4>
+                       <h4><a href="#" id="campground-name"><%= campground.name %></a></h4>
                        <p><%= campground.description %></p>
                        <p>
                            <em>Submitted By <%= campground.author.username %></em>
                         </p>
+                        <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
+                             <a class="btn btn-warning btn-sm" href="/campgrounds/<%= campground._id %>/edit" role="button">Edit</a>
+                            <form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        <% } %>
                    </div>
                </div> 
                <div class="card mt-3">
@@ -35,6 +41,7 @@
                                 <%= comment.text %>
                                 <span class="float-right">5 days ago</span>
                             </p>
+                            <a class="btn btn-sm btn-warning" href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">Edit</a>
                             <hr>
                         <% }); %>
                    </div>

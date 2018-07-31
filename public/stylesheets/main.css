@@ -1,3 +1,18 @@
+/* -------------------------------------------- */
+/* HEADER */
+/* ------------------------------------------- */
+
+.navbar-brand a {
+    text-decoration: none;
+}
+
+
+/* -------------------------------------------- */
+/* CAMPGROUND: SHOW */
+/* ------------------------------------------- */
+
+
+/* IMAGE DISPLAY */
 .img-thumbnail {
     padding: 0;
 }
@@ -8,4 +23,31 @@
 
 .img-thumbnail .caption {
     padding: 20px;
+}
+
+#campground-name {
+    text-decoration: none;
+}
+
+#delete-form {
+    display: inline;
+}
+
+/* -------------------------------------------- */
+/* FORMS: NEW/EDIT */
+/* ------------------------------------------- */
+
+
+.form {
+        padding: 20px;
+}
+
+.form h1 {
+        text-align: center;
+        width: 100%;
+}
+    
+.form-comp {
+        width: 30%; 
+        margin: 30px auto;
 }
