@@ -71,7 +71,19 @@ router.put("/:comment_id", function (req, res) {
         } else {
             res.redirect("/campgrounds/" + req.params.id);
         }
-    })
+    });
+});
+
+
+// DELETE COMMENT ROUTE
+router.delete("/:comment_id", function(req, res) {
+    Comment.findByIdAndRemove(req.params.comment_id, function(err) {
+        if(err) {
+            res.redirect("back");
+        } else {
+            res.redirect("/campgrounds/" + req.params.id);
+        }
+    });
 });
 
 // isloggedIn Middleware
