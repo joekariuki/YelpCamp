@@ -41,10 +41,12 @@
                                 <%= comment.text %>
                                 <span class="float-right">5 days ago</span>
                             </p>
-                            <a class="btn btn-sm btn-warning" href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">Edit</a>
-                            <form id="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                                <input type="submit" class="btn btn-danger btn-sm" value="Delete">
-                            </form>
+                            <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                                <a class="btn btn-sm btn-warning" href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                                <form id="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                    <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                                </form>
+                            <% } %>
                             <hr>
                         <% }); %>
                    </div>
