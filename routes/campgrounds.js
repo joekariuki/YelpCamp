@@ -52,6 +52,10 @@ router.get("/:id", function(req, res) {
         if(err) {
             console.log(err)
         } else {
+            // if campground is not found
+            if (!foundCampground) {
+                return res.status(400).send("Item not found.")
+            }
             // render show template with that campground
             res.render("campgrounds/show", {campground: foundCampground});
         }
@@ -61,7 +65,15 @@ router.get("/:id", function(req, res) {
 // EDIT - edits campgrounds
 router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res) {
     Campground.findById(req.params.id, function(err, foundCampground) {
-        res.render("campgrounds/edit", {campground: foundCampground});
+        if(err) {
+            req.flash("error", "You don't have permission to do this");
+        } else {
+            if (!foundCampground) {
+            return res.status(400).send("Item not found.")
+            }
+            
+            res.render("campgrounds/edit", {campground: foundCampground});
+        }
     });
 });
 
