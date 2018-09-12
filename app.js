@@ -49,7 +49,7 @@ app.use(function(req, res, next) {
 });
 
 
-app.use(indexRoutes);
+app.use("/", indexRoutes);
 app.use("/campgrounds",campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentsRoutes);
 

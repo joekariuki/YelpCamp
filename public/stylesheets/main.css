@@ -51,3 +51,18 @@
         width: 30%; 
         margin: 30px auto;
 }
+
+
+/* -------------------------------------------- */
+/* REGISTER/LOG IN VIEW
+/* ------------------------------------------- */
+#heading {
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.user-access {
+    width: 30%; 
+    margin: 25px auto;
+}
