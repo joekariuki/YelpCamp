@@ -18,7 +18,7 @@ YelpCamp is a responsive Yelp clone built with the Node.ls, Express, MongoDB, RE
 ![screen shot 2018-09-29 at 1 14 02 pm](https://user-images.githubusercontent.com/19616063/46248781-f3370400-c3eb-11e8-8858-6fc5a3cb001e.png)
 
 ## Installation Instructions
-To view locally, makes sure Node.js is installed on your system, clone the repo and make sure the packages listed in the package.json are installed in your system
+To view locally, make sure Node.js is installed on your system, clone the repo and make sure the packages listed in the package.json are installed in your system
 
 ```
 git clone https://github.com/joekariuki/YelpCamp
