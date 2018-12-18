@@ -1,10 +1,133 @@
+/* 
+ primary color: #38C172
+ 
+ */
+
+
+/* -------------------------------------------- */
+/* GENERAL STYLES */
+/* ------------------------------------------- */
+* {
+    font-family: 'Karla', sans-serif;
+    font-size: 18px;
+    color: #212934;
+}
+
+body {
+    background-color: #F8F9FA;
+    font-family: 'Karla', sans-serif;
+    font-size: 18px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5;
+}
+
+.h1, h1 {
+    font-size: 36px;
+}
+
+p {
+    color: #5F6B7A;
+}
+
+.btn-primary {
+    background-color: #38C172;
+    border: 0;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
 /* -------------------------------------------- */
 /* HEADER */
 /* ------------------------------------------- */
 
 .navbar-brand a {
     text-decoration: none;
+    color: #38C172;
 }
+
+.bg-light {
+    background-color: #ffffff !important;
+
+}
+
+.navbar {
+    padding: 0 5px 5px 5px;
+}
+
+.nav-link {
+    font-size: 16px !important;
+    color: #38C172;
+}
+.nav-link:hover {
+    color: #249C57;
+}
+
+.fas.fa-campground {
+    color: #34b269;
+    margin-right: 10px;
+    font-size: 22px;
+}
+
+.fa-user-circle {
+    color: #B8C4CE;
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+/* -------------------------------------------- */
+/* CAMPGROUND PAGE */
+/* ------------------------------------------- */
+.hero {
+    margin-top: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.heading {
+    font-weight: 400;
+}
+
+.form-inline {
+    margin-top: 1.5rem;
+}
+.form-control {
+    height: 36px;
+}
+
+.search-bar {
+    border: 0;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.search-bar:focus {
+    border: 0;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.search-bar:placeholder {
+    color: #8895A7;
+}
+
+.search-btn {
+    border: 0;
+    background-color: #34b269; 
+    font-size: 18px;
+    color: #ffffff;
+    
+}
+.search-btn:focus {
+    border: 0;
+    
+}
+
+.search-btn:hover {
+    border: 0;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+    background-color: #34b269;
+}
+
+
 
 
 /* -------------------------------------------- */
@@ -31,6 +154,12 @@
 
 #delete-form {
     display: inline;
+}
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
 }
 
 /* -------------------------------------------- */
@@ -66,3 +195,15 @@
     width: 30%; 
     margin: 25px auto;
 }
+
+
+/* -------------------------------------------- */
+/* CAMPGROUND INDEX
+/* ------------------------------------------- */
+
+/* SEARCH BAR */
+
+.search-btn {
+    margin-left: 10px;
+}
+

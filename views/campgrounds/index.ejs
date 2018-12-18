@@ -1,28 +1,25 @@
 <% include ../partials/header %>
-<style>
-    
-    .img-thumbnail {
-        margin-bottom: 20px;
-    }
-    
-    img {
-        width: 100%;
-    }
-    
-    .caption {
-        margin: 10px;
-    }
-</style>
-    <header class="jumbotron">
+
+    <header class="hero">
         <div class="container">
-            <h1>Welcome to YelpCamp!</h1>
+            <h1>Welcome to YelpCamp</h1>
             <p>View our hand-picked campgrounds from all over the world</p>
+            
             <p>
-                <a class="btn btn-primary btn-large" href="/campgrounds/new">Add New Campground</a>
+                <form action="/campgrounds" method="GET" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" name="search" placeholder="Where would you like to go?" size="46" class="form-control form-control-sm search-bar">
+                        
+                    </div>
+                    <input type="submit" value="Search" class="btn search-btn btn-sm">
+                </form>
             </p>
         </div>
     </header>
-    
+        <p class="heading">Campgrounds</p>
+        <p>
+            <a class="btn btn-primary btn-sm" href="/campgrounds/new">Add New Campground</a>
+        </p>
         <div class="row text-center" style="display: flex; flex-wrap: wrap;">
             <% campgrounds.forEach(function(campground) { %>
                 <div class="col-md-3 col-sm-6">
@@ -32,12 +29,13 @@
                             <h4><%= campground.name %></h4>
                         </div>
                         <p>
-                            <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+                            <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary btn-sm">More Info</a>
                         </p>
                     </div>
                 </div>
             <% }); %>
     </div>
+
     
 
 <% include ../partials/footer %>

@@ -26,6 +26,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 // seedDB(); // seed the database
 
+app.locals.moment = require("moment");
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -56,4 +57,3 @@ app.use("/campgrounds/:id/comments", commentsRoutes);
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("YelpCamp Server On");
 });
-
