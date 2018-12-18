@@ -49,17 +49,6 @@ router.post("/", middleware.isLoggedIn, middleware.checkReviewExistence, functio
    });
 });
 
-// EDIT - edits a review
-router.get("/:review_id/edit", middleware.checkReviewOwnership, function(req, res) {
-    Review.findById(req.params.review_id, function (err, foundReview) {
-        if (err) {
-            req.flash("error", err.message);
-            res.redirect("back");
-        } else {
-            res.render("reviews/edit", {campground_id: req.params.id, review: foundReview});
-        }
-    })
-})
 
 function calculateAverage(reviews) {
     if (reviews.length === 0) {
@@ -71,5 +60,4 @@ function calculateAverage(reviews) {
     });
     return sum / reviews.length;
 }
-
 module.exports = router;
