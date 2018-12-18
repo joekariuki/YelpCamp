@@ -13,7 +13,7 @@ var express        = require("express"),
 
 // requiring routes
 var commentsRoutes   = require("./routes/comments"),
-    reviewRoutes     = require("./routes/reviews"),
+    reviewRoutes     = require("./routes/review"),
     indexRoutes      = require("./routes/index.js"),
     campgroundRoutes = require("./routes/campgrounds");
     
