@@ -62,5 +62,19 @@ router.get("/logout", function(req, res) {
     res.redirect("/campgrounds");
 });
 
+// REVIEW ROUTE
+router.get("/", function (req, res) {
+    Campground.findById(req.params.id).populate({
+        path: "reviews",
+        options: {sort: {createdAt: -1}} // sorts populated reviews array to show the latest first
+    }).exec(function (err, campground) {
+        if (err || !campground) {
+            req.flash("error", err.message);
+            return res.redirect("back");
+        }
+        res.render("reviews/index", {campground: campground});
+    });
+});
+
 
 module.exports = router;
