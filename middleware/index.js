@@ -3,10 +3,10 @@ var Comment = require("../models/comment");
 var Review = require("../models/review");
 
 // ALL MIDDLEWARE
-var middlwareObj = {};
+var middlewareObj = {};
 
 // check campground ownership    
-middlwareObj.checkCampgroundOwnership = function (req, res, next) {
+middlewareObj.checkCampgroundOwnership = function (req, res, next) {
     if (req.isAuthenticated()) {
         Campground.findById(req.params.id, function(err, foundCampground) {
             if(err) {
@@ -35,7 +35,7 @@ middlwareObj.checkCampgroundOwnership = function (req, res, next) {
 };
 
 // check comment ownership
-middlwareObj.checkCommentOwnership = function (req, res, next) {
+middlewareObj.checkCommentOwnership = function (req, res, next) {
     if (req.isAuthenticated()) {
         Comment.findById(req.params.comment_id, function(err, foundComment) {
             if(err) {
@@ -58,7 +58,7 @@ middlwareObj.checkCommentOwnership = function (req, res, next) {
 };
 
 // check review ownership
-middlwareObj.checkReviewOwnership = function(req, res, next) {
+middlewareObj.checkReviewOwnership = function(req, res, next) {
     if(req.isAuthenticated()){
         Review.findById(req.params.review_id, function(err, foundReview){
             if(err || !foundReview){
@@ -80,7 +80,7 @@ middlwareObj.checkReviewOwnership = function(req, res, next) {
 };
 
 // check review existence
-middlwareObj.checkReviewExistence = function (req, res, next) {
+middlewareObj.checkReviewExistence = function (req, res, next) {
     if (req.isAuthenticated()) {
         Campground.findById(req.params.id).populate("reviews").exec(function (err, foundCampground) {
             if (err || !foundCampground) {
@@ -107,7 +107,7 @@ middlwareObj.checkReviewExistence = function (req, res, next) {
 
 
 // isloggedIn Middleware
-middlwareObj.isLoggedIn = function (req, res, next) {
+middlewareObj.isLoggedIn = function (req, res, next) {
     if(req.isAuthenticated()) {
         return next();
     }
@@ -118,4 +118,4 @@ middlwareObj.isLoggedIn = function (req, res, next) {
 
 
 
-module.exports = middlwareObj;
+module.exports = middlewareObj;
