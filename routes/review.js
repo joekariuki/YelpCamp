@@ -11,9 +11,11 @@ router.get("/new", middleware.isLoggedIn, middleware.checkReviewExistence, funct
     Campground.findById(req.params.id, function(err, campground) {
         if (err) {
             req.flash("error", err.message);
-            return res.redirect("back");
+            res.redirect("back");
+        } else {
+            res.render("reviews/new", {campground: campground});
         }
-        res.render("reviews/new", {campground: campground});
+        
     });
 });
 
@@ -22,26 +24,28 @@ router.post("/", middleware.isLoggedIn, middleware.checkReviewExistence, functio
    Campground.findById(req.params.id).populate("reviews").exec(function (err, campground) {
        if (err) {
            req.flash("error", err.message);
-           return res.redirect("back");
+           res.redirect("back");
+       } else {
+           Review.create(req.body.review, function (err, review) {
+               if(err) {
+                   req.flash("error", err.message);
+                   res.redirect("back");
+               } else {
+                   review.author.id = req.user.id;
+                   review.author.username = req.user.username;
+                   review.campground = campground;
+                   // save review
+                   review.save();
+                   campground.reviews.push(review);
+                   // calculate the new average review for th campground
+                   campground.rating = calculateAverage(campground.reviews);
+                   // save campground
+                   campground.save();
+                   req.flash("success", "Your review has been successfully added.");
+                   res.redirect('/campgrounds/' + campground._id);
+               }
+           });
        }
-       Review.create(req.body.review, function (err, review) {
-           if(err) {
-               req.flash("error", err.message);
-               return res.redirect("back");
-           }
-           review.author.id = req.user.id;
-           review.author.username = req.user.username;
-           review.campground = campground;
-           // save review
-           review.save();
-           campground.reviews.push(review);
-           // calculate the new average review for th campground
-           campground.rating = calculateAverage(campground.reviews);
-           // save campground
-           campground.save();
-           req.flash("success", "Your review has been successfully added.");
-           res.redirect('/campgrounds/' + campground._id);
-       });
    });
 });
 
