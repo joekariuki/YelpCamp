@@ -148,6 +148,11 @@ p {
     padding: 20px;
 }
 
+/* Review Stars */
+.checked {
+    color: orange;
+}
+
 #campground-name {
     text-decoration: none;
 }
