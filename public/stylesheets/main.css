@@ -37,10 +37,9 @@ p {
     box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
-/* -------------------------------------------- */
-/* HEADER */
-/* ------------------------------------------- */
 
+
+/* Header */
 .navbar-brand a {
     text-decoration: none;
     color: #38C172;
@@ -75,26 +74,27 @@ p {
     font-size: 15px;
 }
 
+
 /* -------------------------------------------- */
-/* CAMPGROUND PAGE */
+/* FORMS */
 /* ------------------------------------------- */
-.hero {
-    margin-top: 3rem;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+
+/* NEW & EDIT */
+.form {
+        padding: 20px;
 }
 
-.heading {
-    font-weight: 400;
+.form h1 {
+        text-align: center;
+        width: 100%;
+}
+    
+.form-comp {
+        width: 30%; 
+        margin: 30px auto;
 }
 
-.form-inline {
-    margin-top: 1.5rem;
-}
-.form-control {
-    height: 36px;
-}
-
+/* SEARCH */
 .search-bar {
     border: 0;
     box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
@@ -114,6 +114,7 @@ p {
     background-color: #34b269; 
     font-size: 18px;
     color: #ffffff;
+    margin-left: 10px;
     
 }
 .search-btn:focus {
@@ -127,13 +128,39 @@ p {
     background-color: #34b269;
 }
 
+/* REGISTER & LOGIN */
+#heading {
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.user-access {
+    width: 30%; 
+    margin: 25px auto;
+}
 
 
 
 /* -------------------------------------------- */
-/* CAMPGROUND: SHOW */
+/* CAMPGROUND INDEX */
 /* ------------------------------------------- */
+.hero {
+    margin-top: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
 
+.heading {
+    font-weight: 400;
+}
+
+.form-inline {
+    margin-top: 1.5rem;
+}
+.form-control {
+    height: 36px;
+}
 
 /* IMAGE DISPLAY */
 .img-thumbnail {
@@ -153,62 +180,4 @@ p {
     color: orange;
 }
 
-#campground-name {
-    text-decoration: none;
-}
-
-#delete-form {
-    display: inline;
-}
-
-/* Google Maps */
-#map {
-    height: 400px;
-    width: 100%;
-}
-
-/* -------------------------------------------- */
-/* FORMS: NEW/EDIT */
-/* ------------------------------------------- */
-
-
-.form {
-        padding: 20px;
-}
-
-.form h1 {
-        text-align: center;
-        width: 100%;
-}
-    
-.form-comp {
-        width: 30%; 
-        margin: 30px auto;
-}
-
-
-/* -------------------------------------------- */
-/* REGISTER/LOG IN VIEW
-/* ------------------------------------------- */
-#heading {
-    text-align: center;
-    width: 100%;
-    margin-top: 50px;
-}
-
-.user-access {
-    width: 30%; 
-    margin: 25px auto;
-}
-
-
-/* -------------------------------------------- */
-/* CAMPGROUND INDEX
-/* ------------------------------------------- */
-
-/* SEARCH BAR */
-
-.search-btn {
-    margin-left: 10px;
-}
 
