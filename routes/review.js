@@ -67,6 +67,27 @@ router.put("/:review_id", middleware.checkReviewOwnership, function (req, res) {
     });
 });
 
+// DELETE - delete review
+router.delete("/:review_id", middleware.checkReviewOwnership, function (req, res) {
+    Review.findByIdAndRemove(req.params.review_id, function (err) {
+        if (err) {
+            req.flash("error", err.message);
+            return res.redirect("back");
+        }
+        Campground.findByIdAndUpdate(req.params.id, {$pull: {reviews: req.params.review_id}}, {new: true}).populate("reviews").exec(function (err, campground) {
+            if (err) {
+                req.flash("error", err.message);
+                return res.redirect("back");
+            }
+            // recalculate campground average
+            campground.rating = calculateAverage(campground.reviews);
+            //save changes
+            campground.save();
+            req.flash("success", "Your review was deleted successfully.");
+            res.redirect("/campgrounds/" + req.params.id);
+        });
+    });
+});
 
 
 function calculateAverage(reviews) {
