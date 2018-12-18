@@ -2,6 +2,7 @@ var express    = require("express");
 var router     = express.Router();
 var Campground = require("../models/campground.js");
 var Comment    = require("../models/comment.js");
+var Review    = require("../models/review");
 var middleware = require("../middleware");
 var NodeGeocoder = require('node-geocoder');
  
@@ -27,7 +28,7 @@ router.get("/", function(req, res) {
         });
 });
 
-// Create - add new campground to DB
+// CREATE - add new campground to DB
 router.post("/", middleware.isLoggedIn, function(req, res) {
     // get data from form and add to campgrounds array
     var name = req.body.name;
@@ -68,7 +69,10 @@ router.get("/new", middleware.isLoggedIn, function(req, res) {
 // SHOW - shows more info about one campground
 router.get("/:id", function(req, res) {
     // find the camp page
-    Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground) {
+    Campground.findById(req.params.id).populate("comments").populate({
+        path: "reviews",
+        options: {sort: {createdAt: -1}}
+    }).exec(function(err, foundCampground) {
         if(err) {
             console.log(err)
         } else {
