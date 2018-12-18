@@ -13,7 +13,8 @@ var express        = require("express"),
 
 // requiring routes
 var commentsRoutes   = require("./routes/comments"),
-    indexRoutes       = require("./routes/index.js"),
+    reviewRoutes     = require("./routes/reviews"),
+    indexRoutes      = require("./routes/index.js"),
     campgroundRoutes = require("./routes/campgrounds");
     
 
@@ -53,6 +54,8 @@ app.use(function(req, res, next) {
 app.use("/", indexRoutes);
 app.use("/campgrounds",campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentsRoutes);
+app.use("/campgrounds/:id/reviews", reviewRoutes);
+
 
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("YelpCamp Server On");
