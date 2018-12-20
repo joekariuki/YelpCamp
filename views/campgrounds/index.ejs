@@ -1,34 +1,35 @@
 <% include ../partials/header %>
 
     <header class="hero">
-        <div class="container">
-            <h1>Welcome to YelpCamp</h1>
+        <div>
+            <h1>Welcome to Camper</h1>
             <p>View our hand-picked campgrounds from all over the world</p>
             
             <p>
                 <form action="/campgrounds" method="GET" class="form-inline">
                     <div class="form-group">
-                        <input type="text" name="search" placeholder="Where would you like to go?" size="46" class="form-control form-control-sm search-bar">
+                        <input type="text" name="search" placeholder="Where would you like to go?" size="46" class="search-bar form-control form-control-sm">
                         
                     </div>
-                    <input type="submit" value="Search" class="btn search-btn btn-sm">
+                    <input type="submit" value="Search" class="btn btn-primary search-btn btn-sm">
                 </form>
             </p>
         </div>
     </header>
-        <p class="heading">Campgrounds</p>
-        <p>
-            <a class="btn btn-primary btn-sm" href="/campgrounds/new">Add New Campground</a>
-        </p>
+        
+        <div class="heading">
+            <p>Campgrounds</p>
+        </div>
+        
         <div class="row text-center" style="display: flex; flex-wrap: wrap;">
             <% campgrounds.forEach(function(campground) { %>
                 <div class="col-md-3 col-sm-6">
                     <div class="img-thumbnail">
                          <img src="<%= campground.image %>">
                         <div class="caption">
-                            <h4><%= campground.name %></h4>
+                            <h4 class="campground-name"><%= campground.name %></h4>
                             <% if (campground.rating === 0) { %>
-                                <em>No reviews yet.</em>
+                                <span class="reviews">No reviews yet.</span>
                             <% } else { %>
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star <% if (campground.rating > 1.5) { %> checked <% } %>"></span>
@@ -38,7 +39,7 @@
                             <% } %>
                         </div>
                         <p>
-                            <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary btn-sm">More Info</a>
+                            <a href="/campgrounds/<%= campground._id %>" class="btn btn-secondary btn-sm">More Info</a>
                         </p>
                     </div>
                 </div>

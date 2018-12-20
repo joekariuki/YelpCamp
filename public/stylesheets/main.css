@@ -9,18 +9,18 @@
 /* ------------------------------------------- */
 * {
     font-family: 'Karla', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     color: #212934;
+    line-height: 1.5;
+        /*Layout Lines */
+    /*outline: 1px solid red !important;*/
 }
 
 body {
     background-color: #F8F9FA;
     font-family: 'Karla', sans-serif;
     font-size: 18px;
-}
-
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    line-height: 1.5;
+   
 }
 
 .h1, h1 {
@@ -28,13 +28,73 @@ body {
 }
 
 p {
-    color: #5F6B7A;
+    color: #7D7D7D;
+}
+
+/* Layout */
+.container {
+    max-width: 1280px;
+}
+
+/* Buttons */
+
+.btn {
+    padding: 4px 16px;
+    font-size: 16px;
 }
 
 .btn-primary {
     background-color: #38C172;
     border: 0;
     box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+    color: #ffffff;
+    font-size: 18px;
+
+}
+
+.btn-primary:focus {
+    border: none;
+    background-color: #27874F;
+
+}
+
+.btn-primary:hover {
+    border: 0;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+    background-color: #38C172;
+}
+
+.search-btn {
+    margin-left: 10px;
+}
+
+.btn-secondary {
+    margin-bottom: 5px;
+    background-color: #ffffff;
+    color: #38C172;
+    border: 2px solid #E1E7EC;
+    box-shadow: none;
+    font-size: 16px;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #38C172;
+    border: 2px solid #E1E7EC;
+}
+
+.btn-secondary:focus {
+    box-shadow: none;
+    background-color: #E1E7EC;
+    border: none;
+    
+}
+
+/* Alerts */
+.alert-success {
+    color: #145239;
+    background-color: #A8EEC1;
+    border-color:  #74D99F;
 }
 
 
@@ -105,28 +165,12 @@ p {
     box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
-.search-bar:placeholder {
-    color: #8895A7;
+.search-bar::placeholder {
+    color: #B0B0B0;
+    font-size: 16px;
 }
 
-.search-btn {
-    border: 0;
-    background-color: #34b269; 
-    font-size: 18px;
-    color: #ffffff;
-    margin-left: 10px;
-    
-}
-.search-btn:focus {
-    border: 0;
-    
-}
 
-.search-btn:hover {
-    border: 0;
-    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
-    background-color: #34b269;
-}
 
 /* REGISTER & LOGIN */
 #heading {
@@ -152,20 +196,40 @@ p {
 }
 
 .heading {
-    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
 .form-inline {
     margin-top: 1.5rem;
 }
+
 .form-control {
+    color: #7D7D7D;
+    font-size: 16px;
     height: 36px;
 }
 
-/* IMAGE DISPLAY */
+.form-control::placeholder {
+    color: #B0B0B0;
+    font-size: 16px;
+    height: 36px;
+}
+
+
+/* CAMPGROUNDS DISPLAY */
 .img-thumbnail {
     padding: 0;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+    margin-bottom: 30px;
+    
 }
+
+.img-thumbnail:hover {
+    padding: 0;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.3);
+    
+}
+
 
 .img-thumbnail img {
     width: 100%;
@@ -175,9 +239,25 @@ p {
     padding: 20px;
 }
 
-/* Review Stars */
-.checked {
-    color: orange;
+/* Reviews */
+
+.campground-name {
+    font-size: 18px;
+}
+.fa-star.checked {
+    color: #F4CA64;
+}
+
+.fa-star {
+    font-size: 12px;
+    color: #212934;
+}
+
+.reviews {
+    color: #B0B0B0;
 }
 
 
+/* -------------------------------------------- */
+/* REVIEWS NEW */
+/* ------------------------------------------- */
