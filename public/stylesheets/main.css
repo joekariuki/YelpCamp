@@ -23,6 +23,10 @@ body {
    
 }
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5;
+}
+
 .h1, h1 {
     font-size: 36px;
 }
@@ -98,6 +102,9 @@ p {
 }
 
 
+/* -------------------------------------------- */
+/* NAV STYLES */
+/* ------------------------------------------- */
 
 /* Header */
 .navbar-brand a {
@@ -158,6 +165,7 @@ p {
 .search-bar {
     border: 0;
     box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+    padding: 6px 20px;
 }
 
 .search-bar:focus {
@@ -170,21 +178,45 @@ p {
     font-size: 16px;
 }
 
-
-
-/* REGISTER & LOGIN */
+/* -------------------------------------------- */
+/* REGISTER & LOGIN STYLES */
+/* ------------------------------------------- */
 #heading {
     text-align: center;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 4px;
 }
 
 .user-access {
-    width: 30%; 
+    width: 100%; 
     margin: 25px auto;
 }
 
+.card {
+    margin: 40px auto;
+}
 
+.card-body {
+    padding: 40px;
+}
+
+.user-input {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.user-field {
+	margin-right: 60px;
+	padding: 20px;
+}
+
+.user-btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+}
 
 /* -------------------------------------------- */
 /* CAMPGROUND INDEX */
@@ -217,16 +249,25 @@ p {
 
 
 /* CAMPGROUNDS DISPLAY */
+
+.campgrounds {
+    text-align: center !important;
+    margin-right: -15px;
+    margin-left: -15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .img-thumbnail {
     padding: 0;
-    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+    box-shadow: 0 2px 4px 0 hsla(0, 0%, 0%, 0.2);
     margin-bottom: 30px;
     
 }
 
 .img-thumbnail:hover {
     padding: 0;
-    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.3);
+    /*box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.3);*/
     
 }
 
