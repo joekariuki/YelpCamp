@@ -9,18 +9,16 @@
 /* ------------------------------------------- */
 * {
     font-family: 'Karla', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     color: #212934;
     line-height: 1.5;
-        /*Layout Lines */
+    /*Layout Lines */
     /*outline: 1px solid red !important;*/
 }
 
 body {
     background-color: #F8F9FA;
     font-family: 'Karla', sans-serif;
-    font-size: 18px;
-   
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -216,6 +214,21 @@ p {
     font-size: 16px;
     display: block;
     width: 100%;
+}
+
+.back-btn {
+    color: #7D7D7D;
+    margin-left: 40px;
+}
+
+.back-btn:hover {
+    color: #7D7D7D;
+    text-decoration: underline;
+}
+
+.back-btn:focus {
+    color: #7D7D7D;
+    text-decoration: underline;
 }
 
 /* -------------------------------------------- */
