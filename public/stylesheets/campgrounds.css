@@ -65,3 +65,31 @@
 .rating {
     padding-left: 0;
 }
+
+
+.btn-danger, .btn-danger:hover {
+    color: #B82020;
+    background-color: #FCE8E8;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-warning {
+    color: #CAA53D;
+    background-color: #FDF3D7;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-warning:hover {
+    color: #CAA53D;
+    background-color: #FDF3D7;
+    font-weight: bold;
+    border-color: #CAA53D;
+}
+
+.btn-warning:focus {
+    color: #212934;
+    background-color: #CAA53D;
+    border-color: #CAA53D;
+}
