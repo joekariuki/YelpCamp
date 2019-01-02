@@ -76,7 +76,7 @@
                             <p><a href="/campgrounds/<%= campground._id %>/reviews"><i class="fa fa-search" aria-hidden="true"></i> See all reviews</a></p>
                         </div>
                         <% } %>
-                        <div class="col">
+                        <div class="col" style="display: inline-block">
                             <a href="/campgrounds/<%= campground._id %>/reviews/new" style="box-shadow: none;" class="btn btn-primary float-right"><% if (currentUser && campground.reviews.some(function (review) {return review.author.id.equals(currentUser._id)})) { %> disabled <% } %> 
                                 Write a review
                                </a>
