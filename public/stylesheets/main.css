@@ -129,10 +129,11 @@ a:hover {
 }
 
 .btn-tertiary {
-    margin-bottom: 5px;
-    color: #B0B0B0;
-    margin-right: 0;
-    padding-right: 4px;
+	margin-bottom: 5px;
+	color: #8895A7;
+	margin-right: 0;
+	background-color: #E1E7EC;
+	font-weight: bold;
 }
 
 .btn-tertiary:focus {
