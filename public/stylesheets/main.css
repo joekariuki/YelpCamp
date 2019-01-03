@@ -1,7 +1,7 @@
 /* 
  primary color: #38C172
  black: #212934
- dark grey: #7D7D7D
+ dark grey: #8895A7
  light grey: #B0B0B0
 
  
@@ -25,6 +25,7 @@ body {
     font-family: 'Karla', sans-serif;
 }
 
+/* Text */
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     line-height: 1.5;
 }
@@ -37,12 +38,11 @@ p, a, i {
     color: #8895A7;
 }
 
-
 a:hover {
     color: #8895A7;
 }
 
-/* Text */
+
 .primary-text {
    color: #212934; 
 }
@@ -193,7 +193,7 @@ a:hover {
 /* FORMS */
 /* ------------------------------------------- */
 
-/* NEW & EDIT */
+/* General Styles */
 .form {
         padding: 20px;
 }
@@ -208,6 +208,21 @@ a:hover {
         margin: 30px auto;
 }
 
+.form-control {
+    color: #8895A7;
+    font-size: 16px;
+    height: 36px;
+}
+
+.form-control::placeholder {
+    color: #8895A7;
+    font-size: 16px;
+    height: 36px;
+}
+
+label {
+    color: #8895A7;
+}
 /* SEARCH */
 .search-bar {
     border: 0;
@@ -221,7 +236,7 @@ a:hover {
 }
 
 .search-bar::placeholder {
-    color: #B0B0B0;
+    color: #8895A7;
     font-size: 16px;
 }
 
@@ -293,21 +308,7 @@ a:hover {
     margin-bottom: 1rem;
 }
 
-.form-inline {
-    margin-top: 1.5rem;
-}
 
-.form-control {
-    color: #7D7D7D;
-    font-size: 16px;
-    height: 36px;
-}
-
-.form-control::placeholder {
-    color: #B0B0B0;
-    font-size: 16px;
-    height: 36px;
-}
 
 
 /* CAMPGROUNDS DISPLAY */
