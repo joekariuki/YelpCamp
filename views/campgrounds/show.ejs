@@ -9,10 +9,10 @@
                        <img class="img-fluid" src="<%= campground.image %>">
                    </div>
                    <div class="caption">
-                       <h5 class="float-right">$<%= campground.cost %>/night</h5>
-                       <h4 id="campground-name"><%= campground.name %></h4>
-                       <p><%= campground.location %></p>
-                       <p class="campground-description"><%= campground.description %></p>
+                       <h5 class="float-right primary-text">$<%= campground.cost %>/night</h5>
+                       <h4 id="campground-name primary-text"><%= campground.name %></h4>
+                       <p class="secondary-text"><%= campground.location %></p>
+                       <p class="tertiary-text"><%= campground.description %></p>
                        <p>
                            <span class="submitter">Submitted By <%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></span>
                         </p>
