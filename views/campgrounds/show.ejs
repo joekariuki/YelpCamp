@@ -92,6 +92,9 @@
                         <a class="btn btn-tertiary" href="/campgrounds/<%= campground._id %>/comments/new">Leave a comment</a>
                    </div>
                    <div class="card-body">
+                    <% if (campground.comments.length === 0) { %>
+                            <p class="secondary-text" style="display: inline-block;">No comments yet. Say something about this campground!</p>
+                    <% } else { %>
                        <% campground.comments.forEach(function(comment){ %>
                             <strong><%= comment.author.username %></strong>
                             <p>
@@ -106,6 +109,7 @@
                             <% } %>
                             <hr>
                         <% }); %>
+                    <% } %>
                    </div>
                </div>
         </div>
