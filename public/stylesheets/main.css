@@ -266,17 +266,17 @@ a:hover {
 }
 
 .back-btn {
-    color: #7D7D7D;
+    color: #8895A7;
     margin-left: 40px;
 }
 
 .back-btn:hover {
-    color: #7D7D7D;
+    color: #5F6B7A;
     text-decoration: underline;
 }
 
 .back-btn:focus {
-    color: #7D7D7D;
+    color: #5F6B7A;
     text-decoration: underline;
 }
 
