@@ -8,16 +8,44 @@ var middleware = require("../middleware");
  
 
 // INDEX - show all campgrounds
+// router.get("/", function(req, res) {
+//         req.user;
+//         // Get all campgrounds from db
+//         Campground.find({}, function(err, allCampgrounds) {
+//             if(err) {
+//                 console.log(err);
+//             } else {
+//                 res.render("campgrounds/index", {campgrounds: allCampgrounds});
+//             }
+//         });
+// });
+
+// Define escapeRegex function to avoid regex DDoS attack
+const escapeRegex = text => text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+
+// INDEX -show all campgrounds
 router.get("/", function(req, res) {
-        req.user;
-        // Get all campgrounds from db
-        Campground.find({}, function(err, allCampgrounds) {
-            if(err) {
-                console.log(err);
-            } else {
-                res.render("campgrounds/index", {campgrounds: allCampgrounds});
-            }
-        });
+  let noMatch = null;
+  if (req.query.search) {
+    const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+    Campground.find({name: regex}, function(err, allCampgrounds) {
+      if (err) { console.log(err); }
+      else {
+        if (allCampgrounds.length < 1) {
+          noMatch = "No campgrounds found, please try again.";
+        }
+        res.render("campgrounds/index", { campgrounds: allCampgrounds, page: "campgrounds", noMatch: noMatch });  
+      }
+    });
+  } else {
+    // Get all camgrounds from DB
+    Campground.find({}, function(err, allCampgrounds) {
+      if (err) { console.log(err); }
+      else {
+        res.render("campgrounds/index", { campgrounds: allCampgrounds, page: "campgrounds", noMatch: noMatch });  
+      }
+    }); 
+  }
 });
 
 // CREATE - add new campground to DB
@@ -44,10 +72,10 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
             res.redirect("/campgrounds");
         }
     });
-    });
-// });
+});
 
-//NEW - show form to create new campground
+
+// NEW - show form to create new campground
 router.get("/new", middleware.isLoggedIn, function(req, res) {
     res.render("campgrounds/new");
 });
