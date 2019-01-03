@@ -10,11 +10,11 @@
                    </div>
                    <div class="caption">
                        <h5 class="float-right primary-text">$<%= campground.cost %>/night</h5>
-                       <h5 id="campground-name primary-text"><%= campground.name %></h5>
+                       <h5 class="primary-text"><%= campground.name %></h5>
                        <p class="secondary-text"><%= campground.location %></p>
                        <p class="tertiary-text"><%= campground.description %></p>
-                       <p>
-                           <span class="submitter">Submitted By <%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></span>
+                       <p class="secondary-text">
+                           Submitted By <%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %>
                         </p>
                         <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
                              <a class="btn btn-warning btn-sm" href="/campgrounds/<%= campground._id %>/edit" role="button">Edit</a>
@@ -28,9 +28,7 @@
             <div class="thumbnail">
                 <div class="caption-full">
                     <% if (campground.rating === 0) { %>
-                    <h5>
-                        <em>No reviews yet.</em>
-                    </h5>
+                        <p class="tertiary-text">No reviews yet</p>
                     <% } else { %>
                     <p class="primary-text">
                         Current rating: <strong><%= campground.rating.toFixed(2) %></strong>
@@ -92,9 +90,6 @@
                         <a class="btn btn-tertiary" href="/campgrounds/<%= campground._id %>/comments/new">Leave a comment</a>
                    </div>
                    <div class="card-body">
-                    <% if (campground.comments.length === 0) { %>
-                            <p class="secondary-text" style="display: inline-block;">No comments yet. Say something about this campground!</p>
-                    <% } else { %>
                        <% campground.comments.forEach(function(comment){ %>
                             <strong><%= comment.author.username %></strong>
                             <p>
@@ -109,7 +104,6 @@
                             <% } %>
                             <hr>
                         <% }); %>
-                    <% } %>
                    </div>
                </div>
         </div>
