@@ -5,12 +5,12 @@ YelpCamp is a responsive 'Yelp' styled camp review application built in Node.js,
 
 
 ## Features
-1. Users can register an account or log into their account.
-2. Users can view a list of all the created campgrounds.
-2. Users can create a campground by adding a title, description and image.
-3. Users can add comments to campgrounds.
-4. Users can edit or delete campgrounds or comments they create.
-5. Users can leave a review of a campground
+* Users can register an account or log into their account.
+* Users can view a list of all the created campgrounds.
+* Users can create a campground by adding a title, description and image.
+* Users can add comments to campgrounds.
+* Users can edit or delete campgrounds or comments they create.
+* Users can leave a review of a campground
 
 ## Design
 ![screenshot_2019-01-03 yelpcamp](https://user-images.githubusercontent.com/19616063/50673156-333cf280-0faa-11e9-9429-83b90d930140.png)
