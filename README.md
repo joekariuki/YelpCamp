@@ -1,7 +1,7 @@
 # YelpCamp
  
 ## Summary
-YelpCamp is a responsive 'Yelp' styled camp review application built in Node.js, Express, MongoDB, REST Programming, Bootstrap, HTML and CSS. This was completed as an attempt to teach myself how to build full stack web appications in JavaScript
+YelpCamp is a responsive 'Yelp' styled camp review application built in Node.js, Express, MongoDB, REST Programming, Bootstrap, HTML, CSS and JavaScript. This was completed as an attempt to teach myself how to build full stack web appications in JavaScript
 
 
 ## Features
